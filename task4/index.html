@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIDAS task</title>
+    <!-- update the version number as needed -->
+    <!-- Loading required Dependency and files-->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <!-- CSS only -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <style>
+      body{
+        background-image: url('drawing-3.svg;');
+        background-size: 250px 150px;
+        height: 100vh;
+        width: 100vw;
+      }
+      .image {
+        position: relative;
+        width:100%;
+      }
+.container{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+   top: 10px;
+   left: 0;
+    margin: 0 auto;
+   width: 300px;
+   height: 50px;
+
+}
+.container2{
+  position: absolute;
+   top: 10px;
+   left: 0;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+
+}
+.container3{
+  position: absolute;
+   top: 10px;
+   left: 0;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+
+}
+
+.hitem{
+  margin-left: 5%;
+}
+    </style>
+  <body>
+
+    <div class="image out" >
+            <!-- Inline Svg Drawing was drawn by inkscape therefore svg is not commented-->
+
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <!-- Created with Inkscape (http://www.inkscape.org/) -->
+      
+      <svg
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cc="http://creativecommons.org/ns#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         width="100%"
+         height="100%"
+         viewBox="0 0 1920 1080"
+         version="1.1"
+         id="SVGRoot"
+         inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+         sodipodi:docname="drawing-3.svg">
+        <defs
+           id="defs1368">
+          <linearGradient
+             inkscape:collect="always"
+             id="linearGradient6116">
+            <stop
+               style="stop-color:#ececec;stop-opacity:1;"
+               offset="0"
+               id="stop6112" />
+            <stop
+               style="stop-color:#96a5ff;stop-opacity:1"
+               offset="1"
+               id="stop6114" />
+          </linearGradient>
+          <linearGradient
+             inkscape:collect="always"
+             id="linearGradient6049">
+            <stop
+               style="stop-color:#107ce8;stop-opacity:1"
+               offset="0"
+               id="stop6045" />
+            <stop
+               style="stop-color:#b611b2;stop-opacity:0"
+               offset="1"
+               id="stop6047" />
+          </linearGradient>
+          <linearGradient
+             inkscape:collect="always"
+             xlink:href="#linearGradient6049"
+             id="linearGradient6051"
+             x1="908.57141"
+             y1="90"
+             x2="822.85712"
+             y2="-528.57147"
+             gradientUnits="userSpaceOnUse"
+             gradientTransform="matrix(2.6514398,0,0,1.9720074,-796.57535,940.59864)" />
+          <radialGradient
+             inkscape:collect="always"
+             xlink:href="#linearGradient6116"
+             id="radialGradient6118"
+             cx="1007.291"
+             cy="-238.24907"
+             fx="1007.291"
+             fy="-238.24907"
+             r="13.300958"
+             gradientTransform="matrix(2.8995608,-11.402773,24.287108,6.1758394,3872.9707,12719.049)"
+             gradientUnits="userSpaceOnUse" />
+        </defs>
+        <sodipodi:namedview
+           id="base"
+           pagecolor="#ffffff"
+           bordercolor="#666666"
+           borderopacity="1.0"
+           inkscape:pageopacity="0.0"
+           inkscape:pageshadow="2"
+           inkscape:zoom="0.49497475"
+           inkscape:cx="723.41324"
+           inkscape:cy="906.64539"
+           inkscape:document-units="px"
+           inkscape:current-layer="layer1"
+           showgrid="false"
+           inkscape:window-width="1848"
+           inkscape:window-height="1016"
+           inkscape:window-x="72"
+           inkscape:window-y="27"
+           inkscape:window-maximized="1" />
+        <metadata
+           id="metadata1371">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title />
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <g
+           inkscape:label="Layer 1"
+           inkscape:groupmode="layer"
+           id="layer1">
+          <path
+             style="fill:none;stroke:#c31e50;stroke-width:1.11575818px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0"
+             d="m 1012.3997,1022.9236 c 995.2376,0 995.2376,-0.5876 995.2376,-0.5876 V -0.96085855 H -120.67229 V 1028.8538 l 948.45065,-0.2681"
+             id="path5944"
+             inkscape:connector-curvature="0" />
+          <path
+             style="opacity:1;fill:#0d3ab4;fill-opacity:0.42272729;stroke:#4d156b;stroke-width:1.07738507;stroke-miterlimit:4;stroke-dasharray:1.07738502, 51.71448154000000130;stroke-dashoffset:0;stroke-opacity:0.42352942"
+             d="m 916.39126,1046.7877 c -20.5699,-6.8996 -43.7399,-18.1259 -60.3534,-41.3717 l -8.0202,-8.8612 -473.39539,0.4117 -473.395378,0.4116 1.3e-4,-513.49611 1.3e-4,-513.496117 H 963.7824 2026.3377 V 480.17195 989.958 l -162.4841,1.0208 c -89.3663,0.5614 -313.1851,1.0323 -497.3751,1.0465 l -334.8911,0.026 -8.239,10.899 c -12.4377,16.4529 -33.2304,33.962 -48.4929,40.835 -11.8354,5.3294 -13.9433,5.7647 -30.0916,6.213 -14.9992,0.4163 -18.86431,-0.02 -28.37264,-3.2104 z"
+             id="path5990"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="cccccccccccsscccccc" />
+          <path
+             style="opacity:1;fill:url(#linearGradient6051);fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 1120.0373,205.32164 c 0,0 178.0249,-135.223354 401.5033,-81.69747 223.4785,53.52589 403.0265,339.2832 358.7588,462.15755 -44.2676,122.87433 -362.989,269.97311 -362.989,269.97311 0,0 -240.3022,105.47869 -382.1224,0 C 993.36796,750.27615 972.7823,646.54185 972.7823,646.54185 c 0,0 -18.4705,-86.25892 0,-165.13923 18.47026,-78.88028 30.1533,-83.6961 30.1533,-83.6961 z"
+             id="path6024"
+             inkscape:connector-curvature="0" />
+          <path
+             style="fill:#ececec;stroke:#000000;stroke-width:1.11575818px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 914.34358,983.59052 h 45.47904 l -19.1877,30.87228 z"
+             id="path5946"
+             inkscape:connector-curvature="0" />
+          <path
+             style="opacity:0;fill:#ececec;fill-opacity:0;stroke:#1c1e50;stroke-width:1.52365255;stroke-miterlimit:4;stroke-dasharray:1.52365253, 73.13532115;stroke-dashoffset:0;stroke-opacity:0.89803922"
+             d="m 990.65879,724.01999 c -5.56794,-6.6224 -9.61242,-12.5156 -8.98776,-13.0958 0.62479,-0.5804 8.60354,-0.7656 17.73076,-0.4116 l 16.59481,0.6436 -7.6072,12.4523 -7.6072,12.4526 z"
+             id="path6053"
+             inkscape:connector-curvature="0" />
+          <ellipse
+             style="opacity:0;fill:#ececec;fill-opacity:0;stroke:#1c1e50;stroke-width:0.75416952;stroke-miterlimit:4;stroke-dasharray:0.75416952, 36.20013706;stroke-dashoffset:0;stroke-opacity:0.89803922"
+             id="path6108"
+             cx="1015.9853"
+             cy="-269.27753"
+             rx="9.3552065"
+             ry="5.4315119" />
+          <ellipse
+             style="opacity:0;fill:url(#radialGradient6118);fill-opacity:1;stroke:#1c1e50;stroke-width:0.67592555;stroke-miterlimit:4;stroke-dasharray:0.67592555, 32.44442654000000203;stroke-dashoffset:0;stroke-opacity:0.89803922"
+             id="path6110"
+             cx="1007.1221"
+             cy="-238.24907"
+             rx="13.131983"
+             ry="19.192898" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path2171"
+             d="m 1012.3997,1022.9236 c 995.2376,0 995.2376,-0.5876 995.2376,-0.5876 V -0.96085855 H -120.67229 V 1028.8538 l 948.45065,-0.2681"
+             style="fill:none;stroke:#c31e50;stroke-width:1.11575818px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0" />
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot925"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:74.66666667px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+               id="flowRegion927"
+               style="font-size:74.66666667px;"><rect
+                 id="rect929"
+                 width="513.15747"
+                 height="284.86301"
+                 x="1151.5739"
+                 y="263.79675"
+                 style="font-size:74.66666667px;" /></flowRegion><flowPara
+               id="flowPara931"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:74.66666667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;"
+             x="1208.1425"
+             y="306.22318"
+             id="text937"><tspan
+               sodipodi:role="line"
+               id="tspan935"
+               x="1208.1425"
+               y="341.6138" /></text>
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot939"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+               id="flowRegion941"><rect
+                 id="rect943"
+                 width="579.82758"
+                 height="379.81735"
+                 x="1159.6552"
+                 y="253.69522" /></flowRegion><flowPara
+               id="flowPara945"></flowPara></flowRoot>    <flowRoot
+             xml:space="preserve"
+             id="flowRoot959"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:74.66666667px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+               id="flowRegion961"><rect
+                 id="rect963"
+                 width="533.36053"
+                 height="323.24881"
+                 x="1159.6552"
+                 y="245.614" /></flowRegion><flowPara
+               id="flowPara965"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:96px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+             x="1167.7363"
+             y="346.62927"
+             id="text969"><tspan
+               sodipodi:role="line"
+               id="tspan967"
+               x="1167.7363"
+               y="346.62927">Web App</tspan><tspan
+               sodipodi:role="line"
+               x="1167.7363"
+               y="466.62927"
+               id="tspan971">Task</tspan></text>
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot973"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+               id="flowRegion975"
+               style="font-size:32px;"><rect
+                 id="rect977"
+                 width="543.46204"
+                 height="143.44167"
+                 x="1185.9191"
+                 y="494.11154"
+                 style="font-size:32px;" /></flowRegion><flowPara
+               id="flowPara979"></flowPara></flowRoot>    <flowRoot
+             xml:space="preserve"
+             id="flowRoot983"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+               id="flowRegion985"
+               style="font-size:29.33333333px;"><rect
+                 id="rect987"
+                 width="523.25903"
+                 height="94.954338"
+                 x="1167.7363"
+                 y="514.31458"
+                 style="font-size:29.33333333px;" /></flowRegion><flowPara
+               id="flowPara989"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:26.66666667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;"
+             x="1204.1018"
+             y="534.51764"
+             id="text993"><tspan
+               sodipodi:role="line"
+               id="tspan991"
+               x="1204.1018"
+               y="600.58014"></tspan></text>
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot997"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+               id="flowRegion999"
+               style="font-size:32px;"><rect
+                 id="rect1001"
+                 width="604.07123"
+                 height="163.64471"
+                 x="1117.2288"
+                 y="508.25366"
+                 style="font-size:32px;" /></flowRegion><flowPara
+               id="flowPara1003"></flowPara></flowRoot>    <flowRoot
+             xml:space="preserve"
+             id="flowRoot1005"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+               id="flowRegion1007"><rect
+                 id="rect1009"
+                 width="713.16766"
+                 height="88.893425"
+                 x="1048.5383"
+                 y="578.96436" /></flowRegion><flowPara
+               id="flowPara1011"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.33333397px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+             x="1066.7211"
+             y="591.08618"
+             id="text1015"><tspan
+               sodipodi:role="line"
+               id="tspan1013"
+               x="1066.7211"
+               y="591.08618">Lorem Ipsum Ipsum Lorem is the simple dummy</tspan><tspan
+               sodipodi:role="line"
+               x="1066.7211"
+               y="627.75287"
+               id="tspan1017">text of the type setting industry</tspan></text>
+          <rect
+             style="opacity:0.54000005;fill:#ffffff;fill-opacity:1;stroke:#4d156b;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.42352941"
+             id="rect1031"
+             width="315.1676"
+             height="74.751282"
+             x="1068.7413"
+             y="669.87805" />
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot1033"
+             style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+               id="flowRegion1035"><rect
+                 id="rect1037"
+                 width="428.30469"
+                 height="143.44167"
+                 x="101.01525"
+                 y="520.37549" /></flowRegion><flowPara
+               id="flowPara1039"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:37.33333206px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+             x="1088.9445"
+             y="720.38574"
+             id="text1043"><tspan
+               sodipodi:role="line"
+               id="tspan1041"
+               data-toggle="modal" data-target=".login-register-form"
+               x="1088.9445"
+               y="720.38574">LOGIN|SIGNUP</tspan></text>
+          <ellipse
+             style="opacity:0.54000005;fill:#ffffff;fill-opacity:1;stroke:#4d156b;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.42352941"
+             id="path1045"
+             cx="1499.954"
+             cy="708.38647"
+             rx="47.477169"
+             ry="46.467018" />
+          <path
+             style="opacity:0.54000005;fill:#ff0009;fill-opacity:1;stroke:#4d156b;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.42352941"
+             d="m 1490.8291,709.36717 c 0,-20.33344 0.01,-20.42346 1.4408,-19.44802 9.1545,6.22665 26.2951,18.97893 26.1649,19.46628 -0.092,0.34604 -6.3415,5.0798 -13.8869,10.51946 l -13.7188,9.89029 z"
+             id="path1057"
+             inkscape:connector-curvature="0" />
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot1061"
+             style="fill:#ffffff;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+               id="flowRegion1063"
+               style="fill:#ffffff;fill-opacity:1;"><rect
+                 id="rect1065"
+                 width="147.14285"
+                 height="51.42857"
+                 x="1568.5714"
+                 y="677.85712"
+                 style="fill:#ffffff;fill-opacity:1;" /></flowRegion><flowPara
+               id="flowPara1067"></flowPara></flowRoot>    <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:29.33333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+             x="1564.2856"
+             y="716.42853"
+             id="text1071"><tspan
+               sodipodi:role="line"
+               id="tspan1069"
+               x="1564.2856"
+               y="716.42853">YOUTUBE</tspan></text>
+        </g>
+      </svg>
+      
+
+    </div>
+ 
+    <!-- Creating a flex so as to allign the elements in a row-->
+
+    <div class="container2 out" style="display:flex;flex-direction:row;">
+      <div>
+        <div class ="midas">
+          <img src="http://midas.iiitd.edu.in/assets/themes/lab/images/logo/LOGO.png" style="width:50px;height:50px;" id="midas1">
+        </div> 
+  
+      </div>
+      <div style="margin-left: 4%;">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;">
+            Home
+          </button>
+          <ul class="dropdown-menu">
+            <!--Made Use of Bootstrap component
+            Drowdown activation javascript is provided in the bottom
+            -->
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+    
+      </div>
+      <!-- Next few divs contain the code for dropdown for the header options-->
+      <div style="margin-left: 4%;">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;">
+            About us
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+    
+      </div>
+
+      <div style="margin-left: 4%;">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;">
+            Research
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+    
+      </div>
+
+      <div style="margin-left: 4%;">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;">
+            Contact
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+    
+      </div>
+      <div style="margin-left: 4%;">
+              <button id="logout" class="btn primary">Logout</button>
+      </div>
+
+
+    </div>
+    
+    <!-- Login Sign up modal
+    Visible only when the svg button is clicked
+    -->
+
+    <div class="modal fade out" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Login | Sign-Up</h5>
+            <button id="close"type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="loginform"style="margin-left: 4%;" class="col s10 login">
+              <h1>Login</h1>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="email">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <input id="email" type="email" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="password">Password &nbsp;</label>
+                  <input id="password" type="password" class="validate">
+                </div>
+              </div>
+              <button class="btn"type="submit" style="background-color: rgb(60, 167, 33);">Login</button>
+            </form>
+            <p>__________________________________________</p>
+            <form id="signupform"style="margin-left: 4%;"class="col s10 signup hide">
+              <h1>Sign Up</h1>
+              <div class="row">
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="semail">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <input id="semail" type="email" class="validate">
+                </div>
+              </div>
+      
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="spassword">Password</label>
+                  <input id="spassword" type="password" class="validate">
+                </div>
+              </div>
+              <button class="btn" type="btn green submit" style="background-color: rgb(60, 167, 33);">Submit</button>
+            </form>
+      
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl)
+})  });   
+document.addEventListener('DOMContentLoaded',(event)=>{
+  $('.carousel').carousel()   
+
+})
+document.querySelector("#rect1031").onclick = (event)=>{
+           console.log("Wants to login")
+           $('#myModal').modal('toggle')
+           if(document.getElementById("tspan1041").textContent != "LoggedIn"){
+            $('#myModal').modal('toggle')
+           }
+
+
+        }
+        document.querySelector("#text1043").onclick = (event)=>{
+          console.log("Wants to Login 2")
+          $('#myModal').modal('toggle')
+
+        }
+        
+        document.querySelector("#path1045").onclick = (event)=>{
+           console.log("Wants to Yout")
+          
+        }
+        document.querySelector("#path1057").onclick = (event)=>{
+          console.log("Wants to Yout 2")
+        }
+        document.querySelector("#close").onclick = (event)=>{
+           console.log("Wants to close")
+           $('#myModal').modal('toggle')         
+        }
+     </script>
+    <script src = "script.js"></script>
+
+  </body>
+    
+  </body>
+</html>
