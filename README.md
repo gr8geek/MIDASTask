@@ -9,7 +9,7 @@ MIDAS task 2 and 4 submission
 - Decompressing using the uncompressing extension called "Zip Extraction" as collab takes unsually long time for decompressing the files
 - After Extracting all the files
 - Run the code in the notebook
--
+
 
 # Executing Task 4
 - App was developed using firebase 
