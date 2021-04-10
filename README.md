@@ -12,5 +12,6 @@ MIDAS task 2 and 4 submission
 
 
 # Executing Task 4
+- Deployment: https://gracious-banach-037a3d.netlify.app/task4/
 - App was developed using firebase 
 - To execute in your local pc simply open the index.html using a web browser
